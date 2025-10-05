@@ -87,7 +87,15 @@ document.addEventListener('DOMContentLoaded', function() {
             submissionUrl: 'https://chuong12-rojr.onrender.com',
             description: 'Tích hợp cơ sở dữ liệu và backend',
             submissionDate: '2024-10-25'
+        },
+        {
+            slotNumber: 14,
+            title: 'Chương 12 - Database Integration',
+            submissionUrl: 'https://bai13-1-z9i6.onrender.com',
+            description: 'Tích hợp cơ sở dữ liệu và backend',
+            submissionDate: '2024-10-25'
         }
+        
     ];
     
     // Update statistics (read-only)
