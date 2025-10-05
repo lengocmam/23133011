@@ -18,7 +18,7 @@
                 <li><a href="index.html" class="nav-link">🏠 Trang chủ</a></li>
                 <li><a href="about.html" class="nav-link">👤 Giới thiệu</a></li>
                 <li><a href="projects.html" class="nav-link">🚀 Dự án</a></li>
-                <li><a href="assignments.html" class="nav-link active">📝 Nộp bài</a></li>
+                <li><a href="assignments.html" class="nav-link active">� Bài tập</a></li>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
@@ -31,8 +31,8 @@
     <main class="main-content">
         <section class="assignments-section">
             <div class="container">
-                <h1>Quản lý bài tập</h1>
-                <p class="section-description">20 slot nộp bài tập của tôi</p>
+                <h1>Danh sách bài tập đã hoàn thành</h1>
+                <p class="section-description">Tổng hợp các bài tập trong khóa học Web Development</p>
                 
                 <!-- Statistics Summary -->
                 <div class="stats-summary">
@@ -41,63 +41,12 @@
                         <p>Tổng số slot</p>
                     </div>
                     <div class="stat-box">
-                        <h3 id="submittedCount">0</h3>
-                        <p>Đã nộp</p>
+                        <h3 id="submittedCount">12</h3>
+                        <p>Đã hoàn thành</p>
                     </div>
                     <div class="stat-box">
-                        <h3 id="pendingCount">20</h3>
-                        <p>Chưa nộp</p>
-                    </div>
-                </div>
-
-                <!-- Submit Form -->
-                <div class="submit-form">
-                    <h3>Nộp bài tập mới</h3>
-                    <form id="assignmentForm" onsubmit="return false;">
-                        <div class="form-group">
-                            <label for="slotNumber">Số slot:</label>
-                            <select id="slotNumber" name="slotNumber" required>
-                                <option value="">Chọn slot</option>
-                                <!-- Will be populated by JavaScript -->
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="assignmentTitle">Tiêu đề bài tập:</label>
-                            <input type="text" id="assignmentTitle" name="assignmentTitle" 
-                                   placeholder="Nhập tiêu đề bài tập" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="submissionUrl">URL bài tập:</label>
-                            <input type="url" id="submissionUrl" name="submissionUrl" 
-                                   placeholder="https://github.com/username/repo" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Mô tả (tùy chọn):</label>
-                            <textarea id="description" name="description" rows="3" 
-                                      placeholder="Mô tả ngắn về bài tập"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-submit">
-                            <span class="loading" style="display: none;"></span>
-                            Nộp bài
-                        </button>
-                    </form>
-                </div>
-
-                <!-- Filter Section -->
-                <div class="filter-section">
-                    <div class="filter-controls">
-                        <input type="text" id="searchInput" placeholder="Tìm kiếm theo tiêu đề hoặc số slot...">
-                        <select id="statusFilter">
-                            <option value="">Tất cả trạng thái</option>
-                            <option value="submitted">Đã nộp</option>
-                            <option value="pending">Chưa nộp</option>
-                        </select>
-                        <button class="btn btn-secondary" onclick="exportAssignments()">
-                            <i class="fas fa-download"></i> Xuất dữ liệu
-                        </button>
-                        <button class="btn btn-danger" onclick="clearAllAssignments()">
-                            <i class="fas fa-trash"></i> Xóa tất cả
-                        </button>
+                        <h3 id="pendingCount">8</h3>
+                        <p>Chưa làm</p>
                     </div>
                 </div>
 
@@ -105,42 +54,9 @@
                 <div class="assignments-grid" id="assignmentsList">
                     <!-- Will be populated by JavaScript -->
                 </div>
-
-                <!-- Pagination -->
-                <div class="pagination" id="pagination"></div>
             </div>
         </section>
     </main>
-
-    <!-- Modal for editing assignments -->
-    <div id="editModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Chỉnh sửa bài tập</h3>
-            <form id="editForm">
-                <div class="form-group">
-                    <label>Số slot:</label>
-                    <input type="text" id="editSlotNumber" readonly>
-                </div>
-                <div class="form-group">
-                    <label for="editAssignmentTitle">Tiêu đề bài tập:</label>
-                    <input type="text" id="editAssignmentTitle" required>
-                </div>
-                <div class="form-group">
-                    <label for="editSubmissionUrl">URL bài tập:</label>
-                    <input type="url" id="editSubmissionUrl" required>
-                </div>
-                <div class="form-group">
-                    <label for="editDescription">Mô tả:</label>
-                    <textarea id="editDescription" rows="3"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Cập nhật</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Success/Error Messages -->
-    <div id="messageContainer"></div>
 
     <!-- Footer -->
     <footer class="footer">
