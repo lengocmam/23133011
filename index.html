@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Website Cá Nhân</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Lê Ngọc Duy</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link active">🏠 Trang chủ</a></li>
+                <li><a href="about.html" class="nav-link">👤 Giới thiệu</a></li>
+                <li><a href="projects.html" class="nav-link">🚀 Dự án</a></li>
+                <li><a href="assignments.html" class="nav-link">📝 Nộp bài</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <div class="profile-content">
+                <div class="avatar-container">
+                    <img src="avatar.jpg" alt="Ảnh đại diện" class="avatar">
+                </div>
+                <div class="profile-info">
+                    <h1>Lê Ngọc Duy</h1>
+                    <p class="subtitle">Sinh viên Công nghệ Thông tin</p>
+                    <p class="description">
+                        Sinh viên năm 3 tại Đại học Sư phạm Kỹ thuật TP.HCM. 
+                        Đam mê lập trình và phát triển các ứng dụng từ C#, Python đến AI.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://github.com/ngocduy-le" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/ngocduy-le" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:ngocduyshpy@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://facebook.com/ngocduy.le" target="_blank">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/ngocduyshpy" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="mailto:ngocduyshpy@gmail.com">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="tel:0123456789">
+                            <i class="fas fa-phone"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <img src="hero-bg.jpg" alt="Background" class="hero-bg">
+            <div class="hero-content">
+                <h2>Chào mừng đến với Portfolio của tôi</h2>
+                <p>Khám phá các dự án và kỹ năng của tôi trong lập trình web</p>
+                <a href="projects.html" class="btn btn-primary">Xem dự án</a>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section class="featured-projects">
+            <h2>Dự án nổi bật</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="cafe-management.jpg" alt="Quản lý Quán Cafe" class="project-image">
+                    <div class="project-content">
+                        <h3>Quản lý Quán Cafe</h3>
+                        <p>Hệ thống quản lý quán cafe hoàn chỉnh với C#</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">C#</span>
+                            <span class="tech-tag">WinForms</span>
+                            <span class="tech-tag">SQL Server</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ngocduy-le/cafe-management" target="_blank" class="btn-primary">GitHub</a>
+                            <a href="#" class="btn-secondary">Download</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="music-analysis.jpg" alt="Phân tích Xu hướng Âm nhạc" class="project-image">
+                    <div class="project-content">
+                        <h3>Phân tích Xu hướng Âm nhạc</h3>
+                        <p>Dự án phân tích dữ liệu âm nhạc sử dụng Python</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Pandas</span>
+                            <span class="tech-tag">Matplotlib</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ngocduy-le/music-trend-analysis" target="_blank" class="btn-primary">GitHub</a>
+                            <a href="#" class="btn-secondary">Demo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="ai-tutor.jpg" alt="AI Hướng dẫn Thuật toán" class="project-image">
+                    <div class="project-content">
+                        <h3>AI Hướng dẫn Thuật toán</h3>
+                        <p>Chatbot AI giúp học thuật toán lập trình</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Flask</span>
+                            <span class="tech-tag">OpenAI API</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/ngocduy-le/ai-algorithm-tutor" target="_blank" class="btn-primary">GitHub</a>
+                            <a href="#" class="btn-secondary">Thử ngay</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p>📧 ngocduyshpy@gmail.com</p>
+                    <p>📱 0846974039</p>
+                    <p>📍 TP. Hồ Chí Minh, Việt Nam</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Theo dõi</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/ngocduy-le" target="_blank">GitHub</a>
+                        <a href="https://linkedin.com/in/ngocduy-le" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="about.html">Giới thiệu</a>
+                    <a href="projects.html">Dự án</a>
+                    <a href="assignments.html">Nộp bài</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lê Ngọc Duy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nộp bài tập - Website Cá Nhân</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+                        <div class="nav-logo">
+                <h2>Lê Ngọc Duy</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">🏠 Trang chủ</a></li>
+                <li><a href="about.html" class="nav-link">👤 Giới thiệu</a></li>
+                <li><a href="projects.html" class="nav-link">🚀 Dự án</a></li>
+                <li><a href="assignments.html" class="nav-link active">📝 Nộp bài</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="assignments-section">
+            <div class="container">
+                <h1>Quản lý bài tập</h1>
+                <p class="section-description">20 slot nộp bài tập của tôi</p>
+                
+                <!-- Statistics Summary -->
+                <div class="stats-summary">
+                    <div class="stat-box">
+                        <h3 id="totalSlots">20</h3>
+                        <p>Tổng số slot</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3 id="submittedCount">0</h3>
+                        <p>Đã nộp</p>
+                    </div>
+                    <div class="stat-box">
+                        <h3 id="pendingCount">20</h3>
+                        <p>Chưa nộp</p>
+                    </div>
+                </div>
+
+                <!-- Submit Form -->
+                <div class="submit-form">
+                    <h3>Nộp bài tập mới</h3>
+                    <form id="assignmentForm">
+                        <div class="form-group">
+                            <label for="slotNumber">Số slot:</label>
+                            <select id="slotNumber" name="slotNumber" required>
+                                <option value="">Chọn slot</option>
+                                <!-- Will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="assignmentTitle">Tiêu đề bài tập:</label>
+                            <input type="text" id="assignmentTitle" name="assignmentTitle" 
+                                   placeholder="Nhập tiêu đề bài tập" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="submissionUrl">URL bài tập:</label>
+                            <input type="url" id="submissionUrl" name="submissionUrl" 
+                                   placeholder="https://github.com/username/repo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Mô tả (tùy chọn):</label>
+                            <textarea id="description" name="description" rows="3" 
+                                      placeholder="Mô tả ngắn về bài tập"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">
+                            <span class="loading" style="display: none;"></span>
+                            Nộp bài
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Filter Section -->
+                <div class="filter-section">
+                    <div class="filter-controls">
+                        <input type="text" id="searchInput" placeholder="Tìm kiếm theo tiêu đề hoặc số slot...">
+                        <select id="statusFilter">
+                            <option value="">Tất cả trạng thái</option>
+                            <option value="submitted">Đã nộp</option>
+                            <option value="pending">Chưa nộp</option>
+                        </select>
+                        <button class="btn btn-secondary" onclick="exportAssignments()">
+                            <i class="fas fa-download"></i> Xuất dữ liệu
+                        </button>
+                        <button class="btn btn-danger" onclick="clearAllAssignments()">
+                            <i class="fas fa-trash"></i> Xóa tất cả
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Assignments Grid -->
+                <div class="assignments-grid" id="assignmentsGrid">
+                    <!-- Will be populated by JavaScript -->
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination" id="pagination"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for editing assignments -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Chỉnh sửa bài tập</h3>
+            <form id="editForm">
+                <div class="form-group">
+                    <label>Số slot:</label>
+                    <input type="text" id="editSlotNumber" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="editAssignmentTitle">Tiêu đề bài tập:</label>
+                    <input type="text" id="editAssignmentTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="editSubmissionUrl">URL bài tập:</label>
+                    <input type="url" id="editSubmissionUrl" required>
+                </div>
+                <div class="form-group">
+                    <label for="editDescription">Mô tả:</label>
+                    <textarea id="editDescription" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Cập nhật</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="messageContainer"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p>📧 ngocduyshpy@gmail.com</p>
+                    <p>📱 0846974039</p>
+                    <p>📍 Hồ Chí Minh, Việt Nam</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Theo dõi</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/ngocduyshpy" target="_blank">GitHub</a>
+                        <a href="https://linkedin.com/in/ngocduyshpy" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="about.html">Giới thiệu</a>
+                    <a href="projects.html">Dự án</a>
+                    <a href="assignments.html">Nộp bài</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lê Ngọc Duy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assignments.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

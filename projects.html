@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dự án - Website Cá Nhân</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Lê Ngọc Duy</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">🏠 Trang chủ</a></li>
+                <li><a href="about.html" class="nav-link">👤 Giới thiệu</a></li>
+                <li><a href="projects.html" class="nav-link active">🚀 Dự án</a></li>
+                <li><a href="assignments.html" class="nav-link">📝 Nộp bài</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="projects-section">
+            <div class="container">
+                <h1>Dự án của tôi</h1>
+                <p class="section-description">Khám phá các dự án tôi đã thực hiện</p>
+                
+                <div class="projects-grid">
+                    <!-- Project 1: Quản lý Quán Cafe -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-name">Quản lý Quán Cafe</h3>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <p class="project-description">
+                                Hệ thống quản lý quán cafe hoàn chỉnh với C# WinForms. 
+                                Bao gồm quản lý menu, đơn hàng, nhân viên, doanh thu và báo cáo.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">C#</span>
+                                <span class="tech-tag">WinForms</span>
+                                <span class="tech-tag">SQL Server</span>
+                                <span class="tech-tag">Crystal Reports</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ngocduy-le/cafe-management" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="#" class="btn btn-secondary">
+                                    <i class="fas fa-download"></i> Download
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Phân tích Xu hướng Âm nhạc -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-name">Phân tích Xu hướng Âm nhạc</h3>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <p class="project-description">
+                                Dự án phân tích dữ liệu âm nhạc từ Spotify API sử dụng Python. 
+                                Trực quan hóa xu hướng, thể loại phổ biến và dự đoán hit songs.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">Matplotlib</span>
+                                <span class="tech-tag">Spotify API</span>
+                                <span class="tech-tag">Jupyter</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ngocduy-le/music-trend-analysis" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="#" target="_blank" class="btn btn-secondary">
+                                    <i class="fas fa-chart-bar"></i> Xem Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 3: Dự đoán Tình trạng Thai nhi -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-name">Dự đoán Tình trạng Thai nhi</h3>
+                                <span class="project-year">2024</span>
+                            </div>
+                            <p class="project-description">
+                                Mô hình machine learning sử dụng R để dự đoán tình trạng sức khỏe thai nhi 
+                                dựa trên dữ liệu CTG (Cardiotocography).
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">R</span>
+                                <span class="tech-tag">Random Forest</span>
+                                <span class="tech-tag">Decision Tree</span>
+                                <span class="tech-tag">ggplot2</span>
+                                <span class="tech-tag">Caret</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ngocduy-le/fetal-health-prediction" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="#" target="_blank" class="btn btn-secondary">
+                                    <i class="fas fa-file-pdf"></i> Báo cáo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 4: AI Hướng dẫn Thuật toán -->
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-name">AI Hướng dẫn Thuật toán</h3>
+                                <span class="project-year">2025</span>
+                            </div>
+                            <p class="project-description">
+                                Chatbot AI thông minh giúp sinh viên học thuật toán lập trình một cách hiệu quả. 
+                                Tích hợp OpenAI API và có giao diện web thân thiện.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">OpenAI API</span>
+                                <span class="tech-tag">HTML/CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/ngocduy-le/ai-algorithm-tutor" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="#" target="_blank" class="btn btn-secondary">
+                                    <i class="fas fa-robot"></i> Thử ngay
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="more-projects">
+                    <p>Đang phát triển thêm nhiều dự án thú vị khác... 
+                       <a href="https://github.com/ngocduy-le" target="_blank">Xem thêm trên GitHub</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 6 -->
+                    <div class="project-card">
+                        <img src="project6.jpg" alt="Portfolio Website" class="project-image">
+                        <div class="project-content">
+                            <div class="project-header">
+                                <h3 class="project-name">Portfolio Website</h3>
+                                <span class="project-year">2025</span>
+                            </div>
+                            <p class="project-description">
+                                Website portfolio cá nhân responsive với modern design, 
+                                animations, và assignment submission system.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">GitHub Pages</span>
+                                <span class="tech-tag">Responsive</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/user/portfolio" target="_blank" class="btn btn-primary">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://ngocduyshpy.github.io/portfolio" target="_blank" class="btn btn-secondary">
+                                    <i class="fas fa-external-link-alt"></i> Live
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="more-projects">
+                    <p>Và còn nhiều dự án khác đang phát triển... 
+                       <a href="https://github.com/ngocduyshpy" target="_blank">Xem thêm trên GitHub</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Liên hệ</h3>
+                    <p>📧 ngocduyshpy@gmail.com</p>
+                    <p>📱 0846974039</p>
+                    <p>📍 Hồ Chí Minh, Việt Nam</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Theo dõi</h3>
+                    <div class="social-links">
+                        <a href="https://github.com/ngocduyshpy" target="_blank">GitHub</a>
+                        <a href="https://linkedin.com/in/ngocduyshpy" target="_blank">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <a href="about.html">Giới thiệu</a>
+                    <a href="projects.html">Dự án</a>
+                    <a href="assignments.html">Nộp bài</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lê Ngọc Duy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
