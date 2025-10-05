@@ -53,7 +53,7 @@
                 <!-- Submit Form -->
                 <div class="submit-form">
                     <h3>Nộp bài tập mới</h3>
-                    <form id="assignmentForm">
+                    <form id="assignmentForm" onsubmit="return false;">
                         <div class="form-group">
                             <label for="slotNumber">Số slot:</label>
                             <select id="slotNumber" name="slotNumber" required>
@@ -102,7 +102,7 @@
                 </div>
 
                 <!-- Assignments Grid -->
-                <div class="assignments-grid" id="assignmentsGrid">
+                <div class="assignments-grid" id="assignmentsList">
                     <!-- Will be populated by JavaScript -->
                 </div>
 
@@ -172,7 +172,7 @@
         </div>
     </footer>
 
-    <script src="assignments.js"></script>
+    <script src="assignments-simple.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
