@@ -1,168 +1,177 @@
-// Simple Assignment Manager
+// Read-only Assignment List - Chỉ hiển thị, không cho chỉnh sửa
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Assignment script loaded');
+    console.log('Assignment list loaded (read-only mode)');
     
-    // Initialize assignments
-    let assignments = JSON.parse(localStorage.getItem('assignments')) || [];
-    
-    // Initialize 20 empty slots if needed
-    if (assignments.length === 0) {
-        for (let i = 1; i <= 20; i++) {
-            assignments.push({
-                slotNumber: i,
-                title: '',
-                submissionUrl: '',
-                description: '',
-                status: 'pending',
-                submissionDate: null
-            });
+    // Predefined assignments - bài tập có sẵn (chỉ đọc)
+    const assignments = [
+        {
+            slotNumber: 1,
+            title: 'Trang giới thiệu công ty - Odoo',
+            submissionUrl: 'https://duyle.odoo.com/about-us',
+            description: 'Website giới thiệu công ty sử dụng Odoo platform',
+            submissionDate: '2024-09-15'
+        },
+        {
+            slotNumber: 2,
+            title: 'Website mới - Render Deployment',
+            submissionUrl: 'https://webmoi-t953.onrender.com/',
+            description: 'Website được deploy trên Render platform',
+            submissionDate: '2024-09-20'
+        },
+        {
+            slotNumber: 3,
+            title: 'Tuần 2 - Bài tập Duy',
+            submissionUrl: 'https://tuan2duy.onrender.com/',
+            description: 'Bài tập tuần 2 về HTML/CSS cơ bản',
+            submissionDate: '2024-09-25'
+        },
+        {
+            slotNumber: 4,
+            title: 'Buổi 4 Web - 23133011',
+            submissionUrl: 'https://buoi4web-23133011-duy.onrender.com',
+            description: 'Bài tập buổi 4 về JavaScript và DOM',
+            submissionDate: '2024-10-01'
+        },
+        {
+            slotNumber: 6,
+            title: 'Tuần 3 - Chương 6 (Part 1)',
+            submissionUrl: 'https://tuan3-chuong6.onrender.com',
+            description: 'Bài tập chương 6 phần 1 về form handling',
+            submissionDate: '2024-10-05'
+        },
+        {
+            slotNumber: 7,
+            title: 'Chương 6 (Part 2) - TV49',
+            submissionUrl: 'https://chuong6-2-tv49.onrender.com',
+            description: 'Bài tập chương 6 phần 2 về validation',
+            submissionDate: '2024-10-08'
+        },
+        {
+            slotNumber: 8,
+            title: 'Chương 8 - Advanced Features',
+            submissionUrl: 'https://chuong8.onrender.com',
+            description: 'Bài tập chương 8 về các tính năng nâng cao',
+            submissionDate: '2024-10-12'
+        },
+        {
+            slotNumber: 9,
+            title: 'Chương 9 (Part 2) - Final Project',
+            submissionUrl: 'https://chuong9-2.onrender.com',
+            description: 'Bài tập chương 9 phần 2 - dự án cuối kỳ',
+            submissionDate: '2024-10-15'
+        },
+        {
+            slotNumber: 10,
+            title: 'Chương 9 (Part 1) - Introduction',
+            submissionUrl: 'https://chuong9-1.onrender.com',
+            description: 'Bài tập chương 9 phần 1 - giới thiệu framework',
+            submissionDate: '2024-10-18'
+        },
+        {
+            slotNumber: 11,
+            title: 'Shopping Cart - Chương 7 Part 1',
+            submissionUrl: 'https://chuong7-1.onrender.com',
+            description: 'Xây dựng giỏ hàng với JavaScript',
+            submissionDate: '2024-10-20'
+        },
+        {
+            slotNumber: 12,
+            title: 'Download Feature - Chương 7 Part 2',
+            submissionUrl: 'https://chuong7-2a.onrender.com/',
+            description: 'Tính năng download và xử lý file',
+            submissionDate: '2024-10-22'
+        },
+        {
+            slotNumber: 13,
+            title: 'Chương 12 - Database Integration',
+            submissionUrl: 'https://chuong12-rojr.onrender.com',
+            description: 'Tích hợp cơ sở dữ liệu và backend',
+            submissionDate: '2024-10-25'
         }
-        localStorage.setItem('assignments', JSON.stringify(assignments));
-    }
+    ];
     
-    // Populate slot select
-    function populateSlotSelect() {
-        const select = document.getElementById('slotNumber');
-        if (select) {
-            select.innerHTML = '<option value="">Chọn slot</option>';
-            
-            for (let i = 1; i <= 20; i++) {
-                const assignment = assignments.find(a => a.slotNumber === i);
-                const isAvailable = !assignment || assignment.status === 'pending';
-                const option = document.createElement('option');
-                option.value = i;
-                option.textContent = `Slot ${i}${isAvailable ? '' : ' (Đã nộp)'}`;
-                option.disabled = !isAvailable;
-                select.appendChild(option);
-            }
-        }
-    }
-    
-    // Update statistics
+    // Update statistics (read-only)
     function updateStats() {
-        const submitted = assignments.filter(a => a.status === 'submitted').length;
-        const pending = 20 - submitted;
+        const totalSlots = 20;
+        const submitted = assignments.length;
+        const pending = totalSlots - submitted;
         
         const totalSlotsEl = document.getElementById('totalSlots');
         const submittedCountEl = document.getElementById('submittedCount');
         const pendingCountEl = document.getElementById('pendingCount');
         
-        if (totalSlotsEl) totalSlotsEl.textContent = '20';
+        if (totalSlotsEl) totalSlotsEl.textContent = totalSlots;
         if (submittedCountEl) submittedCountEl.textContent = submitted;
         if (pendingCountEl) pendingCountEl.textContent = pending;
     }
     
-    // Submit assignment
-    function submitAssignment(slotNumber, title, url, description) {
-        if (!slotNumber || !title || !url) {
-            alert('Vui lòng điền đầy đủ thông tin bắt buộc!');
-            return false;
-        }
-        
-        const slotIndex = assignments.findIndex(a => a.slotNumber == slotNumber);
-        if (slotIndex !== -1) {
-            assignments[slotIndex] = {
-                slotNumber: parseInt(slotNumber),
-                title: title,
-                submissionUrl: url,
-                description: description || '',
-                status: 'submitted',
-                submissionDate: new Date().toISOString()
-            };
-            
-            localStorage.setItem('assignments', JSON.stringify(assignments));
-            populateSlotSelect();
-            updateStats();
-            renderAssignments();
-            
-            alert('Nộp bài thành công!');
-            return true;
-        }
-        
-        alert('Có lỗi xảy ra!');
-        return false;
-    }
-    
-    // Render assignments list
+    // Render assignments list (read-only)
     function renderAssignments() {
         const container = document.getElementById('assignmentsList');
         if (!container) return;
         
         container.innerHTML = '';
         
-        const submittedAssignments = assignments.filter(a => a.status === 'submitted');
-        
-        if (submittedAssignments.length === 0) {
-            container.innerHTML = '<p class="no-assignments">Chưa có bài tập nào được nộp</p>';
+        if (assignments.length === 0) {
+            container.innerHTML = '<p class="no-assignments">Chưa có bài tập nào</p>';
             return;
         }
         
-        submittedAssignments.forEach(assignment => {
+        // Sort by slot number
+        const sortedAssignments = [...assignments].sort((a, b) => a.slotNumber - b.slotNumber);
+        
+        sortedAssignments.forEach(assignment => {
             const assignmentDiv = document.createElement('div');
             assignmentDiv.className = 'assignment-item';
             assignmentDiv.innerHTML = `
                 <div class="assignment-header">
                     <span class="slot-number">Slot ${assignment.slotNumber}</span>
-                    <span class="status submitted">Đã nộp</span>
+                    <span class="status submitted">Đã hoàn thành</span>
                 </div>
                 <h4>${assignment.title}</h4>
-                <p><strong>URL:</strong> <a href="${assignment.submissionUrl}" target="_blank">${assignment.submissionUrl}</a></p>
-                ${assignment.description ? `<p><strong>Mô tả:</strong> ${assignment.description}</p>` : ''}
-                <p><strong>Ngày nộp:</strong> ${new Date(assignment.submissionDate).toLocaleDateString('vi-VN')}</p>
-                <button onclick="deleteAssignment(${assignment.slotNumber})" class="btn btn-danger btn-sm">Xóa</button>
+                <p><strong>🔗 URL:</strong> <a href="${assignment.submissionUrl}" target="_blank" rel="noopener">${assignment.submissionUrl}</a></p>
+                ${assignment.description ? `<p><strong>📝 Mô tả:</strong> ${assignment.description}</p>` : ''}
+                <p><strong>📅 Ngày hoàn thành:</strong> ${assignment.submissionDate}</p>
             `;
             container.appendChild(assignmentDiv);
         });
     }
     
-    // Delete assignment
-    window.deleteAssignment = function(slotNumber) {
-        if (confirm('Bạn có chắc muốn xóa bài tập này?')) {
-            const slotIndex = assignments.findIndex(a => a.slotNumber == slotNumber);
-            if (slotIndex !== -1) {
-                assignments[slotIndex] = {
-                    slotNumber: parseInt(slotNumber),
-                    title: '',
-                    submissionUrl: '',
-                    description: '',
-                    status: 'pending',
-                    submissionDate: null
-                };
-                
-                localStorage.setItem('assignments', JSON.stringify(assignments));
-                populateSlotSelect();
-                updateStats();
-                renderAssignments();
-                
-                alert('Đã xóa bài tập!');
+    // Add info note
+    function addInfoNote() {
+        const container = document.querySelector('.assignments-section .container');
+        if (container && !document.querySelector('.info-note')) {
+            const note = document.createElement('div');
+            note.className = 'info-note';
+            note.style.cssText = `
+                background: linear-gradient(135deg, #e8f5e8, #c8e6c8);
+                border: 2px solid #4caf50;
+                border-radius: 15px;
+                padding: 1.5rem;
+                margin: 2rem 0;
+                text-align: center;
+                color: #2e7d32;
+                font-weight: 600;
+                box-shadow: 0 4px 15px rgba(76, 175, 80, 0.2);
+            `;
+            note.innerHTML = `
+                <i class="fas fa-check-circle" style="margin-right: 0.5rem; font-size: 1.2rem; color: #4caf50;"></i>
+                <strong>Danh sách các bài tập đã hoàn thành trong khóa học Web Development</strong>
+                <br><small style="margin-top: 0.5rem; display: block; opacity: 0.8;">Click vào các link để xem chi tiết từng bài tập</small>
+            `;
+            
+            // Insert after the stats
+            const stats = container.querySelector('.stats-summary');
+            if (stats) {
+                stats.after(note);
             }
         }
-    };
-    
-    // Handle form submission
-    const form = document.getElementById('assignmentForm');
-    if (form) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(form);
-            const success = submitAssignment(
-                formData.get('slotNumber'),
-                formData.get('assignmentTitle'),
-                formData.get('submissionUrl'),
-                formData.get('description')
-            );
-            
-            if (success) {
-                form.reset();
-            }
-        });
     }
     
-    // Initialize everything
-    populateSlotSelect();
+    // Initialize everything (read-only mode)
     updateStats();
     renderAssignments();
+    addInfoNote();
     
-    console.log('Assignment manager initialized');
+    console.log('Read-only assignment list initialized with', assignments.length, 'assignments');
 });
