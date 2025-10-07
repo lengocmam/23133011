@@ -9,91 +9,98 @@ document.addEventListener('DOMContentLoaded', function() {
             title: 'Trang giới thiệu công ty - Odoo',
             submissionUrl: 'https://duyle.odoo.com/about-us',
             description: 'Website giới thiệu công ty sử dụng Odoo platform',
-            submissionDate: '2024-09-15'
+            submissionDate: ''
         },
         {
             slotNumber: 2,
             title: 'Website mới - Render Deployment',
             submissionUrl: 'https://webmoi-t953.onrender.com/',
             description: 'Website được deploy trên Render platform',
-            submissionDate: '2024-09-20'
+            submissionDate: ''
         },
         {
             slotNumber: 3,
             title: 'Tuần 2 - Bài tập Duy',
             submissionUrl: 'https://tuan2duy.onrender.com/',
             description: 'Bài tập tuần 2 về HTML/CSS cơ bản',
-            submissionDate: '2024-09-25'
+            submissionDate: ''
         },
         {
             slotNumber: 4,
             title: 'Buổi 4 Web - 23133011',
             submissionUrl: 'https://buoi4web-23133011-duy.onrender.com',
             description: 'Bài tập buổi 4 về JavaScript và DOM',
-            submissionDate: '2024-10-01'
+            submissionDate: ''
         },
         {
             slotNumber: 6,
             title: 'Tuần 3 - Chương 6 (Part 1)',
             submissionUrl: 'https://tuan3-chuong6.onrender.com',
             description: 'Bài tập chương 6 phần 1 về form handling',
-            submissionDate: '2024-10-05'
+            submissionDate: ''
         },
         {
             slotNumber: 7,
             title: 'Chương 6 (Part 2) - TV49',
             submissionUrl: 'https://chuong6-2-tv49.onrender.com',
             description: 'Bài tập chương 6 phần 2 về validation',
-            submissionDate: '2024-10-08'
+            submissionDate: ''
         },
         {
             slotNumber: 8,
             title: 'Chương 8 - Advanced Features',
             submissionUrl: 'https://chuong8.onrender.com',
             description: 'Bài tập chương 8 về các tính năng nâng cao',
-            submissionDate: '2024-10-12'
+            submissionDate: ''
         },
         {
             slotNumber: 9,
             title: 'Chương 9 (Part 2) - Final Project',
             submissionUrl: 'https://chuong9-2.onrender.com',
             description: 'Bài tập chương 9 phần 2 - dự án cuối kỳ',
-            submissionDate: '2024-10-15'
+            submissionDate: ''
         },
         {
             slotNumber: 10,
             title: 'Chương 9 (Part 1) - Introduction',
             submissionUrl: 'https://chuong9-1.onrender.com',
             description: 'Bài tập chương 9 phần 1 - giới thiệu framework',
-            submissionDate: '2024-10-18'
+            submissionDate: ''
         },
         {
             slotNumber: 11,
             title: 'Shopping Cart - Chương 7 Part 1',
             submissionUrl: 'https://chuong7-1.onrender.com',
             description: 'Xây dựng giỏ hàng với JavaScript',
-            submissionDate: '2024-10-20'
+            submissionDate: ''
         },
         {
             slotNumber: 12,
             title: 'Download Feature - Chương 7 Part 2',
             submissionUrl: 'https://chuong7-2a.onrender.com/',
             description: 'Tính năng download và xử lý file',
-            submissionDate: '2024-10-22'
+            submissionDate: ''
         },
         {
             slotNumber: 13,
             title: 'Chương 12 - Database Integration',
             submissionUrl: 'https://chuong12-rojr.onrender.com',
             description: 'Tích hợp cơ sở dữ liệu và backend',
-            submissionDate: '2024-10-25'
+            submissionDate: ''
         },
         {
             slotNumber: 14,
             title: 'Chương 12 - Database Integration',
             submissionUrl: 'https://bai13-1-z9i6.onrender.com',
             description: 'Tích hợp cơ sở dữ liệu và backend',
-            submissionDate: '2024-10-25'
+            submissionDate: ''
+        },
+        {
+            slotNumber: 15,
+            title: 'Chương 14 - email',
+            submissionUrl: 'https://one4-1.onrender.com',
+            description: '',
+            submissionDate: ''
         }
         
     ];
